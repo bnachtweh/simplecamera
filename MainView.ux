@@ -1,0 +1,19 @@
+<App>
+    <DockPanel>
+        <StatusBarBackground Dock="Top" />
+
+        <StackPanel Orientation="Vertical">
+            <Button Text="Maak een foto" Clicked="{takePicture}" Padding="20" />    
+            <WhileNotEmpty Items="{imagePath}">
+                <Image File="{imagePath}" />  
+            </WhileNotEmpty>
+            <WhileEmpty Items="{imagePath}">
+                <Panel Padding="20" Alignment="Center">
+                    <Text Value="Je moet wel een plaatje uploaden"/> 
+                </Panel>    
+            </WhileEmpty>
+        </StackPanel>
+    </DockPanel> 
+
+    <JavaScript File="Camera.js" />
+</App>
